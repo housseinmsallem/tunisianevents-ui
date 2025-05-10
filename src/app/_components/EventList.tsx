@@ -4,12 +4,13 @@ import { EventListProps } from '../dashboard/_lib/types';
 import EventCard from './EventCard';
 
 const EventList = ({ events }: EventListProps) => {
+  console.log(events);
   return (
-    <div>
+    <>
       {events.map((eventItem: Event) => (
         <EventCard key={eventItem.id} event={eventItem} />
       ))}
-    </div>
+    </>
   );
 };
 

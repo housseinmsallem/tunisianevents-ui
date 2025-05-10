@@ -1,6 +1,6 @@
 import React from 'react';
 import { Event } from '../dashboard/_lib/types';
-import { Card, Text } from '@mantine/core';
+import { Badge, Card, Group, Text } from '@mantine/core';
 
 type EventCardProps = {
   event: Event;
@@ -8,15 +8,24 @@ type EventCardProps = {
 const EventCard = ({ event }: EventCardProps) => {
   return (
     <>
-      <Card key={event.id}>
-        <Text>{event.name}</Text>
+      <Card shadow="sm" padding="lg" radius="md" withBorder>
+        <Group justify="space-between" mt="md" mb="xs">
+          <Text fw={500}>{event.name}</Text>
+          <Badge color="green">Pending</Badge>
+        </Group>
         <Text>{event.description}</Text>
-        <Text>{event.city}</Text>
-        <Text>{event.location}</Text>
-        <Text>{event.date}</Text>
-        <Text>{event.duration}</Text>
-        <Text>{event.organisation}</Text>
-        <Text>{event.category}</Text>
+        <Group>
+          <Text>City: {event.city}</Text>
+          <Text>Location: {event.location}</Text>
+        </Group>
+        <Group>
+          <Text>Date: {event.date}</Text>
+          <Text>Duration: {event.duration}</Text>
+        </Group>
+        <Group>
+          <Text>Organisation: {event.organisation}</Text>
+          <Text>Category: {event.category}</Text>
+        </Group>
       </Card>
     </>
   );

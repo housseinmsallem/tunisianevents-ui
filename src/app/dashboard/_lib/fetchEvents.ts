@@ -1,4 +1,3 @@
-
 const fetchEvents = async () => {
   try {
     const response = await fetch('http://localhost:3001/event', {
@@ -7,7 +6,7 @@ const fetchEvents = async () => {
     const result = await response.json();
     return result;
   } catch (error) {
-    return 'No Items Found';
+    return [];
   }
 };
 
