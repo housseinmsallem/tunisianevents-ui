@@ -1,4 +1,4 @@
-import { Anchor, AppShell } from '@mantine/core';
+import { Anchor } from '@mantine/core';
 import React from 'react';
 
 const NavBar = () => {

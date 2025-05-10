@@ -9,3 +9,6 @@ export interface Event {
   organisation: string;
   category: string;
 }
+export interface EventListProps {
+  events: Event[];
+}
