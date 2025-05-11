@@ -1,6 +1,8 @@
 import React from 'react';
 import { Event } from '../dashboard/_lib/types';
 import { Badge, Card, Group, Text } from '@mantine/core';
+import DeleteButton from './DeleteButton';
+import ModifyButton from './ModifyButton';
 
 type EventCardProps = {
   event: Event;
@@ -9,6 +11,11 @@ const EventCard = ({ event }: EventCardProps) => {
   return (
     <>
       <Card shadow="sm" padding="lg" radius="md" withBorder>
+        <Group>
+          <ModifyButton id={event.id} />
+          <DeleteButton id={event.id} />
+        </Group>
+
         <Group justify="space-between" mt="md" mb="xs">
           <Text fw={500}>{event.name}</Text>
           <Badge color="green">Pending</Badge>

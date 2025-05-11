@@ -20,3 +20,15 @@ export async function createEvent(formData: FormData) {
   const result = await res.json();
   console.log('Submitted:', result);
 }
+
+export async function deleteEvent(formData: FormData) {
+  const id = formData.get('id');
+  const res = await fetch(`http://localhost:3001/event/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const result = await res.json();
+  console.log('Deleted', result);
+}
