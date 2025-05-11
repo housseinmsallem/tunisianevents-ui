@@ -24,6 +24,7 @@ const EventForm = () => {
     <Fieldset legend="Submit Event">
       <form action={createEvent}>
         <TextInput
+          name="name"
           label="Event Name"
           placeholder="Event Name"
           value={formData.name}
@@ -31,6 +32,7 @@ const EventForm = () => {
         />
         <Group>
           <TextInput
+            name="city"
             label="City"
             placeholder="City"
             mt="md"
@@ -38,6 +40,7 @@ const EventForm = () => {
             onChange={handleChange}
           />
           <TextInput
+            name="location"
             label="Location"
             placeholder="Location"
             mt="md"
@@ -47,6 +50,7 @@ const EventForm = () => {
         </Group>
         <Group>
           <TextInput
+            name="date"
             label="Date"
             placeholder="Date"
             mt="md"
@@ -54,7 +58,8 @@ const EventForm = () => {
             onChange={handleChange}
           />
           <TextInput
-            label="Duration"
+            name="duration"
+            label="duration"
             placeholder="Duration"
             mt="md"
             value={formData.duration}
@@ -63,6 +68,7 @@ const EventForm = () => {
         </Group>
         <Group>
           <TextInput
+            name="organisation"
             label="Organisation"
             placeholder="Organisation"
             mt="md"
@@ -70,6 +76,7 @@ const EventForm = () => {
             onChange={handleChange}
           />
           <TextInput
+            name="category"
             label="Category"
             placeholder="Category"
             mt="md"
@@ -78,6 +85,7 @@ const EventForm = () => {
           />
         </Group>
         <Textarea
+          name="description"
           label="Description"
           description="Event Description"
           placeholder="Event Description"
