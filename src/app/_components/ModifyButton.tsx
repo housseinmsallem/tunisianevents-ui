@@ -5,11 +5,11 @@ import React from 'react';
 
 const ModifyButton = ({ id }: { id: number }) => {
   return (
-    <ActionIcon variant="default" aria-label="Settings">
-      <Link href={`/dashboard/events/${id}`}>
+    <Link href={`/dashboard/events/${id}`}>
+      <ActionIcon variant="default" aria-label="Settings">
         <IconAdjustments style={{ width: '70%', height: '70%' }} stroke={1.5} />
-      </Link>
-    </ActionIcon>
+      </ActionIcon>
+    </Link>
   );
 };
 

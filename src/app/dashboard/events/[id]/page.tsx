@@ -1,25 +1,12 @@
-import React from 'react';
+import EditEventForm from '@/app/_components/EditEventForm';
+import fetchEventById from '../../_lib/fetchEventById';
 
-interface EventPageProps {
-  params: { id: string };
-}
-
-export default async function EventPage({ params }: EventPageProps) {
-  const { id } = params;
-
-  // Example: fetch event details by ID
-  const res = await fetch(`http://localhost:3001/event/${id}`, {
-    method: 'GET',
-  });
-  const event = await res.json();
-
-  return (
-    <div>
-      <h1>{event.name}</h1>
-      <p>{event.description}</p>
-      <p>
-        {event.city} - {event.date}
-      </p>
-    </div>
-  );
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const paramsRes = await params;
+  const formData = await fetchEventById(paramsRes.id);
+  return <EditEventForm formData={formData} />;
 }

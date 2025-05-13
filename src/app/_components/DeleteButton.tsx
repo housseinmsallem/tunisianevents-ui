@@ -4,14 +4,14 @@ import { IconAdjustments, IconTrash } from '@tabler/icons-react';
 import { deleteEvent } from '../actions';
 const DeleteButton = ({ id }: { id: number }) => {
   return (
-    <ActionIcon color="red" aria-label="Settings">
-      <form action={deleteEvent}>
-        <input type="hidden" name="id" value={id} />
-        <button type="submit">
+    <form action={deleteEvent}>
+      <button type="submit">
+        <ActionIcon color="red" aria-label="Settings">
+          <input type="hidden" name="id" value={id} />
           <IconTrash style={{ width: '70%', height: '70%' }} stroke={1.5} />
-        </button>
-      </form>
-    </ActionIcon>
+        </ActionIcon>
+      </button>
+    </form>
   );
 };
 
